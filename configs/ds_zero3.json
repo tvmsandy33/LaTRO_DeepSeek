@@ -1,0 +1,23 @@
+{
+    "train_batch_size": "auto",
+    "train_micro_batch_size_per_gpu": "auto",
+    "gradient_accumulation_steps": "auto",
+    "bf16": {
+        "enabled": true
+    },
+    "gradient_clipping": false,
+    "steps_per_print": 1,
+    "zero_allow_untested_optimizer": true,
+    "zero_optimization": {
+        "stage": 3,
+        "offload_optimizer": {
+            "device": "cpu",
+            "pin_memory": true
+        },
+        "overlap_comm": false,
+        "sub_group_size": 1e9,
+        "stage3_param_persistence_threshold": "auto",
+        "stage3_gather_16bit_weights_on_model_save": true,
+        "round_robin_gradients": true
+    }
+}
