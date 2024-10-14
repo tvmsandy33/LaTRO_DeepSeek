@@ -78,14 +78,6 @@ Rationale postprocessing args:
 - `stop_token`: stop tokens used to truncate the rationale, can be `eos`, `pad` or `both`, default to use `both`.
 - `stop_seqs`: a list of strings used to truncate the rationale, e.g. `"Answer: "` or `"The answer is"`
 
-Reward/loss computation related:
-- `rationale_length_normalization`: (experimental) if to normalize the logprob(rationale|query) by the length of rationale
-- `non_stop_penalty`: if true, penalize the reward of rationales that doesn't finish (no stop token or stop sequences generated)
-- `penalty_reward_value`: the multiplier of non-stop penalty: `penalized_reward = penalty_reward_value * reward.mean()`, default to be 2
-- `kl_coef`: the multiplier of KL penalty: `reward = reward - kl_coef * KL`
-- `sft_penalty`: multiplier of SFT loss in the final loss: `loss = policy_loss + sft_penalty * sft_loss`,
-
-
 # Repo structure
 ```bash
 ├── README.md
