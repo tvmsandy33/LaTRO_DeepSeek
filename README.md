@@ -1,4 +1,4 @@
-Codes for Latent Reasoning Optimization (LaTRO).
+Codes for [Latent Reasoning Optimization](https://arxiv.org/abs/2411.04282) (LaTRO).
 
 # Quickstart
 
@@ -101,4 +101,17 @@ Rationale postprocessing args:
 │   └── training.sh
 ├── requirements.txt
 └── setup.py
+```
+
+# Citation
+```
+@misc{chen2024languagemodelshiddenreasoners,
+      title={Language Models are Hidden Reasoners: Unlocking Latent Reasoning Capabilities via Self-Rewarding}, 
+      author={Haolin Chen and Yihao Feng and Zuxin Liu and Weiran Yao and Akshara Prabhakar and Shelby Heinecke and Ricky Ho and Phil Mui and Silvio Savarese and Caiming Xiong and Huan Wang},
+      year={2024},
+      eprint={2411.04282},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2411.04282}, 
+}
 ```
