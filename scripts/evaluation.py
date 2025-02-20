@@ -22,15 +22,15 @@ from datasets import load_dataset
 from trl.models.utils import unwrap_model_for_generation
 from peft import PeftModel
 
-from src.utils.data_utils import (
+from LaTRO.utils.data_utils import (
     prepare_dataset_gsm8k,
     prepare_dataset_arc,
 )
-from src.utils.eval_utils import (
+from LaTRO.utils.eval_utils import (
     eval_func_gsm8k,
     eval_func_arc,
 )
-from src.utils.trainer_utils import (
+from LaTRO.utils.trainer_utils import (
     get_end_token,
     set_pad_token,
     batch_generation,

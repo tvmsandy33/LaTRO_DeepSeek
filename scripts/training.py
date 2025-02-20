@@ -8,12 +8,12 @@ from accelerate import PartialState
 from datasets import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, HfArgumentParser
 
-from src.trainer import (
+from LaTRO.trainer import (
     LatroTrainer,
     TrainerConfig,
 )
-from src.utils.data_utils import prepare_dataset_gsm8k, prepare_dataset_arc
-from src.utils.trainer_utils import get_end_token, set_pad_token
+from LaTRO.utils.data_utils import prepare_dataset_gsm8k, prepare_dataset_arc
+from LaTRO.utils.trainer_utils import get_end_token, set_pad_token
 
 
 parser = HfArgumentParser(TrainerConfig)

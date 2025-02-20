@@ -82,7 +82,7 @@ Rationale postprocessing args:
 ```bash
 ├── README.md
 ├── configs # contains deepspeed and accelerate configs, use 8gpu.yaml by default
-├── src
+├── LaTRO
 │   ├── trainer # contain different trainers
 │   │   ├── __init__.py
 │   │   ├── base_trainer.py # base trainer, use only for __init__()
