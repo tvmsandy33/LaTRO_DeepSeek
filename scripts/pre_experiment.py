@@ -12,8 +12,8 @@ from torch.utils.data import DataLoader
 from accelerate import Accelerator
 from datasets import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from src.utils.data_utils import prepare_dataset_gsm8k
-from src.utils.trainer_utils import set_pad_token, get_logprob_reward, pad_mask_rearrange, first_true_indices
+from LaTRO.utils.data_utils import prepare_dataset_gsm8k
+from LaTRO.utils.trainer_utils import set_pad_token, get_logprob_reward, pad_mask_rearrange, first_true_indices
 
 model_names = [
     "meta-llama/Meta-Llama-3.1-8B-Instruct",

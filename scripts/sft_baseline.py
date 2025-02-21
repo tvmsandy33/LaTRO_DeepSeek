@@ -13,7 +13,7 @@ from transformers import (
     TrainingArguments,
 )
 from trl import SFTConfig, SFTTrainer, DataCollatorForCompletionOnlyLM
-from src.utils.trainer_utils import set_pad_token
+from LaTRO.utils.trainer_utils import set_pad_token
 
 load_dotenv(find_dotenv())
 

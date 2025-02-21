@@ -11,6 +11,6 @@ setup(
     description="The official implementation of Latent Reasoning Optimization (LaTRO)",
     license="Apache License 2.0",
     url="https://github.com/SalesforceAIResearch/LaTRO",
-    packages=find_packages(where="src"),
+    packages=find_packages(),
     install_requires=requirements,
 )
