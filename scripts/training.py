@@ -2,6 +2,9 @@ from dotenv import find_dotenv, load_dotenv
 
 load_dotenv(find_dotenv())
 
+import pandas as pd
+import os
+
 import torch
 import wandb
 from accelerate import PartialState
@@ -72,7 +75,9 @@ if (end_token := get_end_token(tokenizer)) not in config.stop_token_ids:
 ################
 match config.dataset_name:
     case "gsm8k":
-        raw_datasets = load_dataset(path="openai/gsm8k", name="main")
+        repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        data_path = os.path.join(repo_root, "valid_data.csv")
+        raw_datasets = load_dataset("csv", data_files="/kaggle/input/math-problems-with-answers-aime-imo/valid_data.csv", split="train")
         prepare_dataset = prepare_dataset_gsm8k
     case "arc_challenge":
         raw_datasets = load_dataset(path="allenai/ai2_arc", name="ARC-Challenge")
@@ -83,8 +88,7 @@ if config.sanity_check:
     for key in raw_datasets:
         raw_datasets[key] = raw_datasets[key].select(range(1000))
 
-train_dataset = raw_datasets["train"]
-eval_dataset = raw_datasets["test"]
+train_dataset, eval_dataset = raw_datasets.train_test_split(test_size=0.2).values()
 
 # Compute that only on the main process for faster data processing.
 # see: https://github.com/huggingface/trl/pull/1255
