@@ -29,7 +29,15 @@ Q: Olivia has $23. She bought five bagels for $3 each. How much money does she h
 A: She bought 5 bagels for $3 each. This means she spent 5 * $3 = $15 on the bagels. She had $23 in beginning, so now she has $23 - $15 = $8. The answer is 8.
 """
 
-
+def apply_chat_template(question: str, tokenizer) -> str:
+    messages = [{"role": "system", "content": "Think step-by-step to arrive at the correct answer. Write down each thinking step. Only keep a minimum draft for each thinking step, with 5 words at most. Return final answer within \\boxed{}, after taking modulo 1000."},
+                {"role": "user", "content": question},
+            ]
+    return tokenizer.apply_chat_template(
+            conversation=messages,
+            tokenize=False,
+            add_generation_prompt=True)
+    
 def prepare_dataset_gsm8k(
     dataset: Dataset,
     tokenizer: AutoTokenizer,
