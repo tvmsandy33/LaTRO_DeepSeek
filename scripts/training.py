@@ -77,7 +77,7 @@ match config.dataset_name:
     case "gsm8k":
         repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         data_path = os.path.join(repo_root, "valid_data.csv")
-        raw_datasets = load_dataset("csv", data_files="/kaggle/input/math-problems-with-answers-aime-imo/valid_data.csv", split="train")
+        raw_datasets = load_dataset("csv", data_files=data_path, split="train")
         prepare_dataset = prepare_dataset_gsm8k
     case "arc_challenge":
         raw_datasets = load_dataset(path="allenai/ai2_arc", name="ARC-Challenge")
